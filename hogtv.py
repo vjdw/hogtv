@@ -22,10 +22,10 @@ def main():
     camera = PiCamera()
     camera.resolution = (133,100)
     camera.start_preview()
+    # Camera warm-up time
     time.sleep(2)
     img1 = capture_image(camera)
     while True:
-        # Camera warm-up time
         img2 = capture_image(camera)
 
         d = cv2.absdiff(img1, img2)
